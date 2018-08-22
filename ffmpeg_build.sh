@@ -31,7 +31,6 @@ make clean
 --enable-fontconfig \
 --enable-pthreads \
 --disable-debug \
---disable-ffserver \
 --enable-version3 \
 --enable-hardcoded-tables \
 --disable-ffplay \
