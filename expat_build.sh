@@ -12,6 +12,7 @@ make clean
   --host="$NDK_TOOLCHAIN_ABI" \
   --enable-static \
   --disable-shared \
+  --with-docbook \
   --prefix="${TOOLCHAIN_PREFIX}" || exit 1
 
 make -j${NUMBER_OF_CORES} install || exit 1
