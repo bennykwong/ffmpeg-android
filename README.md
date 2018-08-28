@@ -1,8 +1,8 @@
-[FFmpeg-Android](http://hiteshsondhi88.github.io/ffmpeg-android/) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FFmpeg--Android-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/925)
+FFmpeg-Android
 ==============
 
-* FFmpeg for Android compiled with x264, libass, fontconfig, freetype and fribidi
-* Supports Android L
+* FFmpeg for Android compiled with x264, libass, fontconfig, freetype, fribidi, libuuid and lame
+* Supports Android N
 * [FFmpeg Android Library](https://github.com/hiteshsondhi88/ffmpeg-android-java)
 
 Supported Architecture
@@ -16,7 +16,7 @@ Instructions
 * Set environment variable
   1. export ANDROID_NDK={Android NDK Base Path}
 * Run following commands to compile ffmpeg
-  1. sudo apt-get --quiet --yes install build-essential git autoconf libtool pkg-config gperf gettext yasm python-lxml
+  1. sudo apt-get --quiet --yes install build-essential git autoconf libtool pkg-config gperf gettext yasm python-lxml autopoint docbook2x
   2. ./init_update_libs.sh
   3. ./android_build.sh
 * To update submodules and libraries you can use ./init_update_libs.sh command
@@ -27,11 +27,3 @@ Instructions
 License
 ----
   check files LICENSE.GPLv3 and LICENSE
-
-HIRE US
---------
-Get in touch with us - http://www.writingminds.com
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/hiteshsondhi88/ffmpeg-android/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
