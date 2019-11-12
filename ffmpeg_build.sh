@@ -8,8 +8,14 @@ case $1 in
   armeabi-v7a | armeabi-v7a-neon)
     CPU='cortex-a8'
   ;;
+  arm64-v8a)
+    CPU='cortex-a57'
+  ;;
   x86)
     CPU='i686'
+  ;;
+  x86_64)
+    CPU='x86-64'
   ;;
 esac
 
@@ -23,7 +29,7 @@ make clean
 --enable-runtime-cpudetect \
 --sysroot="$NDK_SYSROOT" \
 --enable-pic \
---enable-libx264 \
+--disable-libx264 \
 --enable-libass \
 --enable-libfreetype \
 --enable-libfribidi \
@@ -36,7 +42,7 @@ make clean
 --enable-hardcoded-tables \
 --disable-ffplay \
 --disable-ffprobe \
---enable-gpl \
+--disable-gpl \
 --enable-yasm \
 --disable-doc \
 --disable-shared \

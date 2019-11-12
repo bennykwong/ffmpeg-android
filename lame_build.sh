@@ -10,8 +10,14 @@ case $1 in
   armeabi-v7a | armeabi-v7a-neon)
     HOST=arm-linux
   ;;
+  arm64-v8a)
+    HOST=aarch64-linux
+  ;;
   x86)
     HOST=i686-linux
+  ;;
+  x86_64)
+    HOST=x86_64-linux
   ;;
 esac
 

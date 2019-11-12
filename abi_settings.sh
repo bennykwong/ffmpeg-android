@@ -16,11 +16,23 @@ case $1 in
     NDK_CROSS_PREFIX="${NDK_TOOLCHAIN_ABI}"
     CFLAGS="${CFLAGS} -mfpu=neon"
   ;;
+  arm64-v8a)
+    NDK_ABI='arm64'
+    NDK_TOOLCHAIN_ABI='aarch64-linux-android'
+    NDK_CROSS_PREFIX="${NDK_TOOLCHAIN_ABI}"
+    CFLAGS="${CFLAGS} -march=armv8-a"
+  ;;
   x86)
     NDK_ABI='x86'
     NDK_TOOLCHAIN_ABI='x86'
     NDK_CROSS_PREFIX="i686-linux-android"
     CFLAGS="$CFLAGS -march=i686"
+  ;;
+  x86_64)
+    NDK_ABI='x86_64'
+    NDK_TOOLCHAIN_ABI='x86_64-linux-android'
+    NDK_CROSS_PREFIX="${NDK_TOOLCHAIN_ABI}"
+    CFLAGS="$CFLAGS -O2 -march=x86-64 -mtune=intel -msse4.2 -mpopcnt -m64 -fPIC"
   ;;
 esac
 
