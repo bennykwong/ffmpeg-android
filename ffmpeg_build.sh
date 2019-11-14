@@ -21,6 +21,17 @@ esac
 
 make clean
 
+# --enable-libopenh264 \
+# --enable-encoder=libopenh264\
+
+# --enable-libass \
+# --enable-libfreetype \
+# --enable-libfribidi \
+# --enable-libmp3lame \
+# --enable-fontconfig \
+# --extra-libs="-lpng -lexpat -lm -luuid" \
+
+
 ./configure \
 --target-os="$TARGET_OS" \
 --cross-prefix="$CROSS_PREFIX" \
@@ -30,11 +41,8 @@ make clean
 --sysroot="$NDK_SYSROOT" \
 --enable-pic \
 --disable-libx264 \
---enable-libass \
---enable-libfreetype \
---enable-libfribidi \
---enable-libmp3lame \
---enable-fontconfig \
+--enable-libopenh264 \
+--enable-encoder=libopenh264 \
 --disable-linux-perf \
 --enable-pthreads \
 --disable-debug \
@@ -47,11 +55,10 @@ make clean
 --disable-doc \
 --disable-shared \
 --enable-static \
---pkg-config="${2}/ffmpeg-pkg-config" \
 --prefix="${2}/build/${1}" \
 --extra-cflags="-I${TOOLCHAIN_PREFIX}/include $CFLAGS" \
 --extra-ldflags="-L${TOOLCHAIN_PREFIX}/lib $LDFLAGS" \
---extra-libs="-lpng -lexpat -lm -luuid" \
+--extra-libs="-lm" \
 --extra-cxxflags="$CXX_FLAGS" || exit 1
 
 make -j${NUMBER_OF_CORES} && make install || exit 1
