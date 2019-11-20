@@ -6,7 +6,7 @@ pushd openh264-2.0.0
 
 ANDROID_PLATFROM_VERSION=android-21
 
-make clean
+make OS=android NDKROOT=$ANDROID_NDK ARCH=$NDK_ABI TARGET=$ANDROID_PLATFROM_VERSION NDKLEVEL=21 clean
 
 case $1 in
   armeabi-v7a | armeabi-v7a-neon)
@@ -25,6 +25,6 @@ esac
 
 # make -j12 PREFIX=${TOOLCHAIN_PREFIX} OS=android NDKROOT=${ANDROID_NDK} TARGET=${ANDROID_PLATFROM_VERSION} libraries install-static
 # make OS=android NDKROOT=${ANDROID_NDK} TARGET=${ANDROID_PLATFROM_VERSION} NDKLEVEL=21 ARCH=arm64 libraries install || exit 1
-make OS=android NDKROOT=/src/android-ndk-r14b ARCH=arm64 TARGET=android-21 NDKLEVEL=21 libraries install-static
-
+make OS=android NDKROOT=$ANDROID_NDK ARCH=$NDK_ABI TARGET=$ANDROID_PLATFROM_VERSION NDKLEVEL=21 libraries install-static
+# make OS=android NDKROOT=/src/android-ndk-r14b ARCH=$NDK_ABI TARGET=android-21 NDKLEVEL=21 libraries install-static
 popd
