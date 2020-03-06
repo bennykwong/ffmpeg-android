@@ -30,11 +30,11 @@ make clean
 --sysroot="$NDK_SYSROOT" \
 --enable-pic \
 --disable-libx264 \
---enable-libass \
---enable-libfreetype \
---enable-libfribidi \
---enable-libmp3lame \
---enable-fontconfig \
+--disable-libass \
+--disable-libfreetype \
+--disable-libfribidi \
+--disable-libmp3lame \
+--disable-fontconfig \
 --disable-linux-perf \
 --enable-pthreads \
 --disable-debug \
@@ -43,7 +43,8 @@ make clean
 --disable-ffplay \
 --disable-ffprobe \
 --disable-gpl \
---enable-yasm \
+--disable-yasm \
+--disable-asm \
 --disable-doc \
 --disable-shared \
 --enable-static \
@@ -51,7 +52,7 @@ make clean
 --prefix="${2}/build/${1}" \
 --extra-cflags="-I${TOOLCHAIN_PREFIX}/include $CFLAGS" \
 --extra-ldflags="-L${TOOLCHAIN_PREFIX}/lib $LDFLAGS" \
---extra-libs="-lpng -lexpat -lm -luuid" \
+--extra-libs="-lm" \
 --extra-cxxflags="$CXX_FLAGS" || exit 1
 
 make -j${NUMBER_OF_CORES} && make install || exit 1
