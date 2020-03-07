@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export ANDROID_NDK=/ndk/android-ndk-r14b
+
 # SUPPORTED_ARCHITECTURES=(armeabi-v7a armeabi-v7a-neon arm64-v8a x86 x86_64)
 SUPPORTED_ARCHITECTURES=(x86)
 ANDROID_NDK_ROOT_PATH=${ANDROID_NDK}
